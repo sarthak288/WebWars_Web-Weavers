@@ -1,12 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
-    <head>
-        <title>Redirecting</title>
-        <meta http-equiv="REFRESH" content="0;url=web_weavers/index.html">
-    </head>
-    <body>
-        <center>
-            Redirecting to the real root folder.
-        </center>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Playlist Generator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">MyPlaylist</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </nav>
+        <div class="auth">
+            <button class="login-btn" onclick="openModal('loginModal')">Login</button>
+            <button class="signup-btn" onclick="openModal('signupModal')">Sign Up</button>
+        </div>
+    </header>
+
+    <main>
+        <h1>Find Your Perfect Playlist</h1>
+        <p>Answer a few questions to generate a playlist that matches your personality!</p>
+        <div id="quiz">
+            <h3>who are you?</h3>
+            <select id="profession">
+                <option value="Student">Student</option>
+                <option value="employee">Employee</option>
+            </select>
+            <h3>What's your mood today?</h3>
+            <select id="mood">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="energetic">Energetic</option>
+                <option value="calm">Calm</option>
+
+
+            </select>
+
+            <button onclick="generatePlaylist()">Generate Playlist</button>
+        </div>
+        <div id="result">
+                <h2>Your Playlist:</h2>
+                <iframe id="spotifyEmbed" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </main>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <input type="text" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="loginUser()">Login</button>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="text" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button onclick="signupUser()">Sign Up</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 MyPlaylist. All Rights Reversed.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
 </html>
