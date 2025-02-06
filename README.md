@@ -17,4 +17,4 @@ schedule
 speakers
 registration
 contact page
-deployment link:
+deployment link:https://sarthak288.github.io/WebWars_Web-Weavers/
